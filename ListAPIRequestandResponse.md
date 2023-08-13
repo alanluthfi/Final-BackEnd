@@ -193,9 +193,9 @@ Creates a new comments to product.
 
 ```
   {
-  videoID: string
-  username: string
-  coomment: string
+    videoID: string
+    username: string
+    comment: string
   }
 ```
 
@@ -206,7 +206,7 @@ Creates a new comments to product.
   {
       videoID: string
       username: string
-      coomment: string
+      comment: string
       timestamps: datetime(iso 8601)
   }
   ```
