@@ -1,10 +1,10 @@
 # Final Project Back-end side
 
-Editef rom previous Mid-Term project for the same program [Mid-Term-Link-Here](https://github.com/alanluthfi/Mid-Term-gigih-3.0)
+Edited from previous Mid-Term project for the same program [Mid-Term-Link-Here](https://github.com/alanluthfi/Mid-Term-gigih-3.0)
 
 ## DataBase structure
 
-Using database named Mid-Term consisting 3 collection which is called comment, product, and thumbnail to save the respective data.
+Using database named "gigih-lab", in "final" collection which containing comments, products, and thumbnails to save the respective data.
 ![](DatabaseStructure1.png)
 
 ## API structure
