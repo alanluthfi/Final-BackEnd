@@ -1,12 +1,16 @@
-#Models
-* Video Thumbnail Model
+# Models
+
+- Video Thumbnail Model
+
 ```
 {
   videoID: string
   UrlThumbnail: string
 }
 ```
-* Product Model
+
+- Product Model
+
 ```
 {
   productID: string
@@ -15,7 +19,9 @@
   price: number
 }
 ```
-* Comment Model
+
+- Comment Model
+
 ```
 {
   videoID: string
@@ -24,18 +30,22 @@
   timestamps: datetime(iso 8601)
 }
 ```
-**GET /thumb/getThumb**
-----
-  Returns all thumbnails in Home Page.
-* **URL Params**  
+
+## **GET /thumb/getThumb**
+
+Returns all thumbnails in Home Page.
+
+- **URL Params**  
   None
+
 * **Data Params**  
   None
 * **Headers**  
-  Content-Type: application/json  
-* **Success Response:**  
+  Content-Type: application/json
+* **Success Response:**
 * **Code:** 200  
-  **Content:**  
+  **Content:**
+
 ```
 {
   thumbnail: [
@@ -44,129 +54,143 @@
          ]
 }
 ```
-**GET /product/:videoID**
-----
-  Returns the products from video thumbnail.
-* **URL Params**  
-  *Required:* `videoID=[string]`
-* **Data Params**  
+
+## **GET /product/:videoID**
+
+Returns the products from video thumbnail.
+
+- **URL Params**  
+  _Required:_ `videoID=[string]`
+- **Data Params**  
   None
-* **Headers**  
-  Content-Type: application/json  
-* **Success Response:** 
-* **Code:** 200  
-  **Content:**  ```
-{
-  product: [
-           {<productID>},
-           {<productLink>},
-		   {<title>},
-		   {<price>}
-         ]
-}
-``` 
-* **Error Response:**  
-  * **Code:** 404  
-  **Content:** `{ error : "Thumbnail not found" }`  
-  OR  
-  * **Code:** 500  
-  **Content:** `{ error : error : "Internal Server Error" }`
-  
-**GET /comment/:videoID**
-----
-  Returns the comments from video thumbnail.
-* **URL Params**  
-  *Required:* `videoID=[string]`
-* **Data Params**  
+- **Headers**  
+  Content-Type: application/json
+- **Success Response:**
+- **Code:** 200  
+  **Content:**
+
+  ```
+  {
+      product: [
+          {<productID>},
+          {<productLink>},
+  	    {<title>},
+  	    {<price>}
+      ]
+  }
+  ```
+
+- **Error Response:**
+  - **Code:** 404  
+    **Content:** `{ error : "Thumbnail not found" }`  
+    OR
+  - **Code:** 500  
+    **Content:** `{ error : error : "Internal Server Error" }`
+
+## **GET /comment/:videoID**
+
+Returns the comments from video thumbnail.
+
+- **URL Params**  
+  _Required:_ `videoID=[string]`
+- **Data Params**  
   None
-* **Headers**  
-  Content-Type: application/json  
-* **Success Response:** 
-* **Code:** 200  
-  **Content:**  ```
-{
-  product: [
+- **Headers**  
+  Content-Type: application/json
+- **Success Response:**
+- **Code:** 200  
+  **Content:**
+  ```
+    {
+        product: [
            {<videoID>},
            {<username>},
-		   {<comment>},
-		   {<timestamp>}
-         ]
-}
-``` 
-* **Error Response:**  
-  * **Code:** 404  
-  **Content:** `{ error : "Thumbnail not found" }`  
-  OR  
-  * **Code:** 500  
-  **Content:** `{ error : error : "Internal Server Error" }`
-  
-  
-  **POST /thumb/create**
-----
-  Creates a new thumbnail to homepage.
-* **URL Params**  
+  	   {<comment>},
+  	   {<timestamp>}
+        ]
+    }
+  ```
+- **Error Response:**
+  - **Code:** 404  
+    **Content:** `{ error : "Thumbnail not found" }`  
+    OR
+  - **Code:** 500  
+    **Content:** `{ error : error : "Internal Server Error" }`
+
+## **POST /thumb/create**
+
+Creates a new thumbnail to homepage.
+
+- **URL Params**  
   None
-* **Headers**  
-  Content-Type: application/json  
-* **Data Params**  
+- **Headers**  
+  Content-Type: application/json
+- **Data Params**
+
 ```
   {
     videoID: string,
     UrlThumbnail: string
   }
 ```
-* **Success Response:**  
-* **Code:** 200  
-  **Content:**  ```
+
+- **Success Response:**
+- **Code:** 200  
+  **Content:**
+  ```
   {
     videoID: string,
     UrlThumbnail: string
   }
-``` 
-* **Error Response:**  
-* **Code:** 500  
-**Content:** `{ error : error : "Failed to save Thumbnail" }`
-  
-  
-**POST /product/create**
-----
-  Creates a new product to video details.
-* **URL Params**  
+  ```
+- **Error Response:**
+- **Code:** 500  
+  **Content:** `{ error : error : "Failed to save Thumbnail" }`
+
+## **POST /product/create**
+
+Creates a new product to video details.
+
+- **URL Params**  
   None
-* **Headers**  
-  Content-Type: application/json  
-* **Data Params**  
+- **Headers**  
+  Content-Type: application/json
+- **Data Params**
+
 ```
   {
-  productID: string
-  productLink: string
-  title: string
-  price: number
+      productID: string
+      productLink: string
+      title: string
+      price: number
   }
 ```
-* **Success Response:**  
-* **Code:** 200  
-  **Content:**  ```
+
+- **Success Response:**
+- **Code:** 200  
+  **Content:**
+  ```
   {
-  productID: string
-  productLink: string
-  title: string
-  price: number
+        productID: string
+        productLink: string
+        title: string
+        price: number
   }
-``` 
-* **Error Response:**  
-* **Code:** 500  
-**Content:** `{ error : error : "Failed to save Product" }`
+  ```
+- **Error Response:**
+- **Code:** 500  
+  **Content:** `{ error : error : "Failed to save Product" }`
 
+## **POST /comments/create**
 
-**POST /comments/create**
-----
-  Creates a new comments to product.
-* **URL Params**  
+Creates a new comments to product.
+
+- **URL Params**  
   None
-* **Headers**  
-  Content-Type: application/json  
-* **Data Params**  
+- **Headers**  
+  Content-Type: application/json
+- **Data Params**
+
 ```
   {
   videoID: string
@@ -174,16 +198,18 @@
   coomment: string
   }
 ```
-* **Success Response:**  
-* **Code:** 200  
-  **Content:**  ```
+
+- **Success Response:**
+- **Code:** 200  
+  **Content:**
+  ```
   {
-  videoID: string
-  username: string
-  coomment: string
-  timestamps: datetime(iso 8601)
+      videoID: string
+      username: string
+      coomment: string
+      timestamps: datetime(iso 8601)
   }
-``` 
-* **Error Response:**  
-* **Code:** 500  
-**Content:** `{ error : error : "Failed to save Product" }`
+  ```
+- **Error Response:**
+- **Code:** 500  
+  **Content:** `{ error : error : "Failed to save Product" }`
