@@ -2,6 +2,8 @@
 
 Edited from previous Mid-Term project for the same program [Mid-Term-Link-Here](https://github.com/alanluthfi/Mid-Term-gigih-3.0)
 
+**Also** This is the Back-end side repo for the ==[front-end-implementation](https://github.com/alanluthfi/Final-FrontEnd)==
+
 ## Hosted back-end url
 
 [https://final-back-end.vercel.app](https://final-back-end.vercel.app)/{route}
