@@ -2,6 +2,10 @@
 
 Edited from previous Mid-Term project for the same program [Mid-Term-Link-Here](https://github.com/alanluthfi/Mid-Term-gigih-3.0)
 
+## Hosted back-end url
+
+[https://final-back-end.vercel.app](https://final-back-end.vercel.app)/{route}
+
 ## DataBase structure
 
 Using database named "gigih-lab", in "final" collection which containing comments, products, and thumbnails to save the respective data.
@@ -44,7 +48,7 @@ can be viewed in [List-Api-Req-Res-File](ListAPIRequestandResponse.md)
 
 ## start the server with:
 
-`npm start`
+in root project folder terminal using `npm start`
 
 **Post to thumbnail DataBase using postman:**
 
