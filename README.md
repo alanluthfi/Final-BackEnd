@@ -1,9 +1,11 @@
-# Mid-Term Gigih 3.0
+# Final Project Back-end side
+
+Editef rom previous Mid-Term project for the same program [Mid-Term-Link-Here](https://github.com/alanluthfi/Mid-Term-gigih-3.0)
 
 ## DataBase structure
 
 Using database named Mid-Term consisting 3 collection which is called comment, product, and thumbnail to save the respective data.
-![](DatabaseStructure.png)
+![](DatabaseStructure1.png)
 
 ## API structure
 
@@ -14,19 +16,22 @@ Using database named Mid-Term consisting 3 collection which is called comment, p
 
 ## List API request and response
 
-can be viewed in [this file](ListAPIRequestandResponse.md)
+can be viewed in [List-Api-Req-Res-File](ListAPIRequestandResponse.md)
 
-## How to run in local
+# How to run in local
 
-### required module:
+## used module:
 
 ```
-dotenv
-express
-mongoose
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.4.0",
+    "nodemon": "^3.0.1",
 ```
 
-### Set up the MongoDB connection:
+## Set up the MongoDB connection:
 
 - Make sure you have MongoDB installed and running on your local machine.
 - Copy .env.example to .env
@@ -37,57 +42,57 @@ mongoose
 
 - In the `.env` file, update the MongoDB connection string to point to your local MongoDB instance.
 
-### start the server with:
+## start the server with:
 
-`npm run dev`
+`npm start`
 
-### Post to thumbnail DataBase using postman:
+**Post to thumbnail DataBase using postman:**
 
-`POST http://localhost:3000/thumb/create`
+`POST http://localhost:3069/thumb/create`
 with json body:
 
 ```
 {
     "videoID": "0",
-    "UrlThumb":"someurl"
+    "UrlThumb":"YoutubeEmbedUrl"
 }
 ```
 
-### Get thumbnail data
+**Get thumbnail data**
 
-`GET http://localhost:3000/thumb/getThumb`
+`GET http://localhost:3069/thumb/getThumb`
 
-### Post to product DataBase using postman:
+**Post to product DataBase using postman:**
 
-`POST http://localhost:3000/product/create`
+`POST http://localhost:3069/product/create`
 with json body:
 
 ```
 {
     "productID":"0",
-    "productLink":"someurl",
+    "productLink":"ProductUrl",
     "title":"product title",
     "price": 10000
 }
 ```
 
-### Get product data
+**Get product data**
 
-`GET http://localhost:3000/product/0`
+`GET http://localhost:3069/product/YoutubeVideoID`
 
-### Post to comment DataBase using postman:
+**Post to comment DataBase using postman:**
 
-`POST http://localhost:3000/comment/create`
+`POST http://localhost:3069/comment/create`
 with json body:
 
 ```
 {
     "userName":"Name",
     "comment":"comment fill",
-    "videoID":"0"
+    "videoID":"YoutubeVideoID"
 }
 ```
 
-### Get comment data
+**Get comment data**
 
-`GET http://localhost:3000/comment/0`
+`GET http://localhost:3069/comment/YoutubeVideoID`
